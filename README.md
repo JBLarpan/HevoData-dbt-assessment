@@ -7,7 +7,7 @@ dbt transformation project that builds a `customers` materialized table in Snowf
 PostgreSQL → Hevo Pipeline → Snowflake (raw) → dbt → customers table
 
 ## Project Structure
-
+```text
 .
 ├── dbt_project.yml
 ├── macros/
@@ -24,6 +24,7 @@ PostgreSQL → Hevo Pipeline → Snowflake (raw) → dbt → customers table
 └── tests/
 ├── assert_positive_lifetime_value.sql
 └── assert_first_order_before_recent.sql
+```
 
 ## Output
 
@@ -39,13 +40,17 @@ Builds a materialized table MARTS.customers in Snowflake:
 | number_of_orders | orders | Total order count |
 | customer_lifetime_value | payments | Sum of all payments |
 
+```markdown
 ## Schema Layout
+```
+```text
 
 Snowflake: PC_HEVODATA_DB
 ├── PUBLIC ← raw tables loaded by Hevo
 ├── STAGING ← dbt staging views
 └── MARTS ← dbt final tables
 
+```
 ## Setup
 
 1. Install dbt
