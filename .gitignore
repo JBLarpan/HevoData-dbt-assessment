@@ -1,0 +1,16 @@
+# dbt specific
+target/
+dbt_packages/
+logs/
+
+# Profiles (IMPORTANT: Never push credentials)
+profiles.yml
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Python specific (if using virtual environments)
+venv/
+__pycache__/
+.env

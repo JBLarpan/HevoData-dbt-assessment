@@ -1,0 +1,23 @@
+name: 'HevoData_dbt_assessment'
+version: '1.0.0'
+config-version: 2
+
+profile: 'hevo_assessment'
+
+model-paths: ["models"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  HevoData_dbt_assessment:
+    staging:
+      +materialized: view
+      +schema: staging
+    marts:
+      +materialized: table
+      +schema: marts

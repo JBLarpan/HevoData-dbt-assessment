@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: customers
+    description: >
+      One record per customer. Combines customer identity with order history
+      and lifetime payment value.
+    columns:
+      - name: customer_id
+        description: Primary key — unique customer identifier
+        tests:
+          - unique
+          - not_null
+
+      - name: first_name
+        description: Customer first name
+        tests:
+          - not_null
+
+      - name: last_name
+        description: Customer last name
+        tests:
+          - not_null
+
+      - name: first_order
+        description: Date of the customer's first order
+
+      - name: most_recent_order
+        description: Date of the customer's most recent order
+
+      - name: number_of_orders
+        description: Total number of orders placed by the customer
+        tests:
+          - not_null
+
+      - name: customer_lifetime_value
+        description: Sum of all payment amounts (in dollars) across all orders
+        tests:
+          - not_null
